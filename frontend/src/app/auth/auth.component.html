@@ -1,1 +1,9 @@
-<p>auth works!</p>
+<article>
+  <section>
+    <header>
+      <a [routerLink]="['./login']" routerLinkActive="active"> <span> Login</span></a>
+      <a [routerLink]="['./register']" routerLinkActive="active" > <span> Register</span></a>
+    </header>
+    <router-outlet></router-outlet>
+  </section>
+</article>

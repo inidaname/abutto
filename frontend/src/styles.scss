@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/variables.scss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: lighten($color: $mainColor, $amount: 0.4);
+}
+
+a {
+  text-decoration: none;
+}

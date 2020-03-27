@@ -1,0 +1,29 @@
+@mixin mQ($arg...) {
+  @if length($arg)==2 {
+      @media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)) {
+          @content;
+      }
+  }
+
+  @else {
+      @media screen and (min-width: nth($arg, 1)) {
+          @content;
+      }
+  }
+}
+
+@mixin shadow {
+  box-shadow: 1px 5px 5px transparentize($color: #000000, $amount: 0.7);
+}
+
+@mixin bdr {
+  padding: 12px;
+  border-radius: 21px;
+}
+
+@mixin flex($fld: column, $jsc: center, $at: center) {
+  display: flex;
+  flex-direction: $fld;
+  justify-content: $jsc;
+  align-items: $at;
+}
