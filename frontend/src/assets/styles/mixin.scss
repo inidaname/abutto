@@ -27,3 +27,9 @@
   justify-content: $jsc;
   align-items: $at;
 }
+
+@mixin grid {
+  // TODO: Column
+  display: grid;
+  grid-template: row;
+}

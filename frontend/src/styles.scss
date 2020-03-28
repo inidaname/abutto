@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/styles/variables.scss";
+@import "./assets/styles/mixin.scss";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,4 +13,38 @@ html {
 
 a {
   text-decoration: none;
+}
+
+
+.form {
+  min-height: 150px;
+  width: 100%;
+  @include flex($at: flex-start, $jsc: space-around);
+  &-control {
+    // @TODO: Use grid
+    margin: 5px;
+    width: 97%;
+    @include flex(row, space-between);
+    padding: 2px;
+    margin: auto;
+    &-label {
+      font-variant: small-caps;
+    }
+    &-input {
+      //@TODO: Check
+    }
+  }
+}
+
+.btn {
+  border: 1px solid;
+  padding: 12px;
+  display: block;
+  min-width: 43px;
+  min-height: 30px;
+  @include shadow();
+  &-primary {
+    color: #fff;
+    background-color: complement($mainColor);
+  }
 }
