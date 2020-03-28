@@ -47,4 +47,7 @@ a {
     color: #fff;
     background-color: complement($mainColor);
   }
+  &:disabled {
+    background-color: lighten(complement($mainColor), 20%);
+  }
 }
