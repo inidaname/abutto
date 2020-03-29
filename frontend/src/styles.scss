@@ -16,38 +16,38 @@ a {
 }
 
 
-.form {
-  min-height: 150px;
-  width: 100%;
-  @include flex($at: flex-start, $jsc: space-around);
-  &-control {
-    // @TODO: Use grid
-    margin: 5px;
-    width: 97%;
-    @include flex(row, space-between);
-    padding: 2px;
-    margin: auto;
-    &-label {
-      font-variant: small-caps;
-    }
-    &-input {
-      //@TODO: Check
-    }
-  }
-}
+// .form {
+//   min-height: 150px;
+//   width: 100%;
+//   @include flex($at: flex-start, $jsc: space-around);
+//   &-control {
+//     // @TODO: Use grid
+//     margin: 5px;
+//     width: 97%;
+//     @include flex(row, space-between);
+//     padding: 2px;
+//     margin: auto;
+//     &-label {
+//       font-variant: small-caps;
+//     }
+//     &-input {
+//       //@TODO: Check
+//     }
+//   }
+// }
 
-.btn {
-  border: 1px solid;
-  padding: 12px;
-  display: block;
-  min-width: 43px;
-  min-height: 30px;
-  @include shadow();
-  &-primary {
-    color: #fff;
-    background-color: complement($mainColor);
-  }
-  &:disabled {
-    background-color: lighten(complement($mainColor), 20%);
-  }
-}
+// .btn {
+//   border: 1px solid;
+//   padding: 12px;
+//   display: block;
+//   min-width: 43px;
+//   min-height: 30px;
+//   @include shadow();
+//   &-primary {
+//     color: #fff;
+//     background-color: complement($mainColor);
+//   }
+//   &:disabled {
+//     background-color: lighten(complement($mainColor), 20%);
+//   }
+// }

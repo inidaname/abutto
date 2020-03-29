@@ -21,8 +21,10 @@
     "@angular/router": "~9.0.7",
     "@angular/service-worker": "~9.0.7",
     "rxjs": "~6.5.4",
+    "tailwindcss-schematic": "^0.3.7",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "tailwindcss": "1.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.7",
@@ -43,6 +45,8 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "@angular-builders/custom-webpack": "9.0.0",
+    "@fullhuman/postcss-purgecss": "2.1.0"
   }
 }

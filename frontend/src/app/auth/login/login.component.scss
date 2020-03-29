@@ -1,8 +1,0 @@
-@import '../../../assets/styles/mixin.scss';
-@import '../../../assets/styles/variables.scss';
-
-section {
-  height: 220px;
-  width: 400px;
-  @include flex($at: flex-start, $jsc: space-around);
-}
