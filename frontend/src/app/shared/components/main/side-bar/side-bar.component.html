@@ -1,1 +1,17 @@
-<p>side-bar works!</p>
+<div class="flex w-100 flex-col justify-start items-start relative h-full ">
+  <header class="flex w-full my-5 items-center h-20 mx-auto rounded-md shadow-lg">
+    <img src="https://thispersondoesnotexist.com/image" class="rounded-full mx-5 w-16 h-16">
+    <div class="text-center md:text-left">
+      <h3 class="text-lg">Hassan Sani</h3>
+      <small>Online</small>
+    </div>
+  </header>
+  <ul class="nav mt-10 h-48 w-full flex flex-col justify-around">
+    <li class="shadow-md w-full p-3 my-5"><a [routerLink]="['./']" routerLinkActive="router-link-active">Home</a></li>
+    <li class="shadow-md w-full p-3 my-5"><a [routerLink]="['./dashboard']" routerLinkActive="router-link-active">Dashboard</a></li>
+    <li class="shadow-md w-full p-3 my-5"><a [routerLink]="['./settings']" routerLinkActive="router-link-active">Settings</a></li>
+  </ul>
+  <footer class="absolute inset-x-0 bottom-0">
+    Logout
+  </footer>
+</div>
