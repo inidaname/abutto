@@ -1,0 +1,43 @@
+<article class="shadow-lg w-75 p-4 rounded-lg bg-white m-4">
+  <header class="flex flex-row justify-around items-center w-full border-b-2 border-links pb-6 pt-3 h-5">
+    <div class="w-1/2 text-center m-1" [ngClass]="{'bg-gray-300 border-r-2 border-links ': currentSpace === 'needing'}" (click)="changeSpace('needing')">Re</div>
+    <div class="w-1/2 text-center m-1" [ngClass]="{'bg-gray-300 border-l-2 border-links ': currentSpace === 'giving'}" (click)="changeSpace('giving')">Gi</div>
+  </header>
+  <section class="bg-white w-full" *ngIf="currentSpace === 'needing'">
+    <ul class="my-6">
+      <li class="flex w-full my-5 items-center px-4 justify-between h-20 mx-auto rounded-md shadow-lg">
+        <img src="https://thispersondoesnotexist.com/image" class="rounded-full w-16 h-16">
+        <div class="text-center md:text-left">
+          <h3 class="text-lg">Hassan Sani</h3>
+          <small>Online</small><small>distance</small>
+        </div>
+        <div class="text-center md:text-left">
+          Need
+        </div>
+      </li>
+      <li class="flex w-full my-5 items-center px-4 justify-between h-20 mx-auto rounded-md shadow-lg">
+        <img src="https://thispersondoesnotexist.com/image" class="rounded-full w-16 h-16">
+        <div class="text-center md:text-left">
+          <h3 class="text-lg">Hassan Sani</h3>
+          <small>Online</small><small>distance</small>
+        </div>
+        <div class="text-center md:text-left">
+          Need
+        </div>
+      </li>
+      <li class="flex w-full my-5 items-center px-4 justify-between h-20 mx-auto rounded-md shadow-lg">
+        <img src="https://thispersondoesnotexist.com/image" class="rounded-full w-16 h-16">
+        <div class="text-center md:text-left">
+          <h3 class="text-lg">Hassan Sani</h3>
+          <small>Online</small><small>distance</small>
+        </div>
+        <div class="text-center md:text-left">
+          Need
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section class="bg-white w-full" *ngIf="currentSpace === 'giving'">
+    See All
+  </section>
+</article>

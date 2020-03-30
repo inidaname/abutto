@@ -10,12 +10,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { PathNotFoundComponent } from './path-not-found/path-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    HomeComponent
+    HomeComponent,
+    PathNotFoundComponent
   ],
   imports: [
     BrowserModule,

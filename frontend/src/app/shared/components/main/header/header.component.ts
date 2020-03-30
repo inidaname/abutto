@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  StatesService } from '../../../services/share/states.service';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   toggle: boolean;
 
-  constructor() {
+  constructor(
+    private state: StatesService
+  ) {
     this.toggle = false;
   }
 
   ngOnInit(): void {
   }
+
   toggleMenu() {
     this.toggle = !this.toggle;
+    this.state.setState(this.toggle);
   }
 
 }

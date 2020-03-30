@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { StatesService } from '../shared/services/share/states.service';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  public toggle = false;
+  public obs: Observable<boolean>;
 
-  constructor() {}
-
-  ngOnInit(): void {
+  constructor(
+    private state: StatesService
+  ) {
+    this.obs = this.state.currentState;
   }
 
-  toggleMenu() {
-    this.toggle = !this.toggle;
+  ngOnInit(): void {
   }
 
 }

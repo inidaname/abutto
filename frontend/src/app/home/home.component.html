@@ -1,8 +1,8 @@
-<article class="h-100 flex flex-row justify-start align-items-start w-full">
-  <aside [class]="(!toggle) ? 'p-5 w-48 lg:w-1/5 md:w-20 sm:w-1/7 visible opacity-100' : 'w-0 invisible opacity-0 p-0'" class="h-screen position-fixed bg-white transition-all duration-500 ease-in-out align-self-start">
+<article class="h-100 flex flex-row justify-start align-items-start w-screen">
+  <aside [class]="(!(obs | async)) ? 'p-5 w-48 lg:w-1/5 md:w-20 sm:w-1/7 visible opacity-100' : 'w-0 invisible opacity-0 p-0'" class="h-screen position-fixed bg-white transition-all duration-500 ease-in-out align-self-start">
     <app-side-bar></app-side-bar>
   </aside>
-  <section>
+  <section class="flex-1 mx-auto">
     <app-header></app-header>
     <main>
       <router-outlet></router-outlet>
