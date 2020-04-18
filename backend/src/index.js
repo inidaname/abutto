@@ -1,15 +1,15 @@
 import express from 'express';
 import logger from 'morgan';
 import helmet from 'helmet';
-import { json, urlencoded } from 'body-parser';
 import cors from 'cors';
-import dbConnection from './src/utils/dbConnection';
+import dbConnection from './api/utils/dbConnection';
+import v1Routes from './api/v1/route';
+import v2Routes from './api/v2/routes';
 
-// import environmental variables from our variables.env file
-require('dotenv').config({ path: '.env' });
+// import environmental variables from our .env file
+require('dotenv').config();
 
-//import module
-import routes from './src/route';
+//import error handling modules
 import {
   notFound,
   developmentErrors,
@@ -17,7 +17,13 @@ import {
 } from './src/utils/errorHandlers';
 
 // Connect to our Database and handle an bad connections
-dbConnection();
+try {
+  dbConnection();
+} catch (error) {
+  console.log('An error occured coonecting to the Db');
+  throw error;
+}
+
 
 // init Express app
 const app = express();
@@ -34,12 +40,14 @@ app.use(logger('dev'));
 //use helmet security wrapper
 app.use(helmet());
 
-// Takes the raw requests and turns them into usable properties on req.body
-app.use(json());
-app.use(urlencoded({ extended: true }));
+// include middleware to enable json body parsing and nested objects
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //handling CORS
 app.use(cors());
+
+//set response headers
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
@@ -54,8 +62,9 @@ app.use(function(req, res, next) {
 });
 
 
-//use route module
-app.use('/', routes);
+//use different routes for different versions
+app.use('/api/v1', v1Routes);
+app.use('/api/v2', v2Routes);
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(notFound);
