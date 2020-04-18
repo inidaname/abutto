@@ -1,5 +1,5 @@
 import { userModel } from '../models';
-import { asyncHandler, convertNumber, genRandom } from '../utils/helpers';
+import { asyncHandler, convertNumber, genRandom } from '../../utils/helpers';
 
 export const getUser = asyncHandler(async (req, res) => {
   const user = await userModel.findById(req.params.id);
